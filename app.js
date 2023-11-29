@@ -3,9 +3,12 @@ const config = require('config');
 const mongoose = require('mongoose')
 
 const app = expres();
+app.use('/api/auth', require('./routes/auth.routes'));
+app.use('api/store', require('./routes/store.routes'));
+
 
 const PORT = config.get('port') || 5001
-const URL=config.get('mongoUri')
+const URL = config.get('mongoUri')
 async function start() {
     try {
         await mongoose.connect(URL)
