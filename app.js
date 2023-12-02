@@ -9,7 +9,7 @@ app.use(cors({
     origin: '*'
 }))
 app.use('/api/auth', require('./routes/auth.routes'));
-app.use('api/store', require('./routes/store.routes'));
+app.use('api/todos', require('./routes/todo.routes'));
 
 
 const PORT = config.get('port') || 5001
